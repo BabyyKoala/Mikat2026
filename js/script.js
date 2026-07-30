@@ -57,7 +57,7 @@ function renderProker() {
         ${p.tujuan ? `<div><p class="font-mono text-white/40 text-[11px] uppercase tracking-wide mb-1">tujuan</p>${renderTextOrList(p.tujuan, "text-[#7C5CFC]", "—")}</div>` : ""}
         ${p.sasaran ? `<div><p class="font-mono text-white/40 text-[11px] uppercase tracking-wide mb-1">sasaran</p><p class="text-white/80">${p.sasaran}</p></div>` : ""}
         ${p.waktuLokasi ? `<div><p class="font-mono text-white/40 text-[11px] uppercase tracking-wide mb-1">waktu & lokasi</p><p class="text-white/80">${p.waktuLokasi}</p></div>` : ""}
-        ${p.pesertaPJ ? `<div><p class="font-mono text-white/40 text-[11px] uppercase tracking-wide mb-1">pj</p><p class="text-white/80">${p.pesertaPJ}</p></div>` : ""}
+        ${p.pesertaPJ ? `<div><p class="font-mono text-white/40 text-[11px] uppercase tracking-wide mb-1">peserta & pj</p><p class="text-white/80">${p.pesertaPJ}</p></div>` : ""}
         ${p.lingkup ? `<div><p class="font-mono text-white/40 text-[11px] uppercase tracking-wide mb-1">lingkup</p><p class="text-white/80">${p.lingkup}</p></div>` : ""}
       </div>`;
 
