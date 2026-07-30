@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beranda — Minat & Bakat HMPS Informatika</title>
+<meta name="description" content="Portofolio Divisi Minat & Bakat HMPS Informatika Universitas Amikom Purwokerto.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css">
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  /* Icon di dalam dir-icon (directory listing) ikut ukuran & warna box-nya */
+  .dir-icon i{ font-size:.95rem; line-height:1; }
+  .logo-mark i{ font-size:1rem; line-height:1; }
+</style>
+</head>
+
+<body class="antialiased">
+
+<!-- ===================== NAV ===================== -->
+<header id="top" class="fixed top-0 inset-x-0 z-50">
+  <!-- strip info institusi + kontak cepat -->
+  <div class="hidden sm:flex items-center justify-between gap-4 px-5 sm:px-8 h-8 bg-[#05060A] text-[10px] font-mono text-white/40 border-b border-white/5">
+    <p class="truncate">Himpunan Mahasiswa Program Studi Informatika — Universitas Amikom Purwokerto</p>
+    <div class="flex items-center gap-5 shrink-0">
+      <a href="mailto:kabinetnawasena8@gmail.com" class="hover:text-white transition">✉ kabinetnawasena8@gmail.com</a>
+      <a href="kontak.html" class="hover:text-white transition">@hmps_informatika</a>
+    </div>
+  </div>
+
+  <div class="backdrop-blur-md bg-[#0A0B12]/75 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-2.5 group shrink-0">
+        <span class="logo-mark w-9 h-9 rounded-lg bg-gradient-to-br from-[#7C5CFC] to-[#4C3599] flex items-center justify-center text-white text-sm shrink-0"><i class="fi fi-br-trophy"></i></span>
+        <span class="font-display font-semibold text-white text-sm leading-tight">Minat &amp; Bakat<br><span class="font-mono text-[#45D6C0] text-[11px] font-normal tracking-wide">hmps.informatika</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-5 lg:gap-8 text-sm text-white/80">
+        <a href="index.html" class="nav-link hover:text-white">Beranda</a>
+        <a href="tentang.html" class="nav-link hover:text-white">Tentang</a>
+        <a href="program-kerja.html" class="nav-link hover:text-white">Program Kerja</a>
+        <a href="pengurus.html" class="nav-link hover:text-white">Pengurus</a>
+        <a href="galeri.html" class="nav-link hover:text-white">Galeri</a>
+        <a href="kontak.html" class="nav-link hover:text-white">Kontak</a>
+      </nav>
+
+      <button id="menuBtn" class="md:hidden text-white p-2 -mr-2" aria-label="Buka menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-[#0A0B12]/95 px-5 py-4 flex flex-col gap-4 text-white/85 text-sm">
+      <a href="index.html" class="mobile-link">Beranda</a>
+      <a href="tentang.html" class="mobile-link">Tentang</a>
+      <a href="program-kerja.html" class="mobile-link">Program Kerja</a>
+      <a href="pengurus.html" class="mobile-link">Pengurus</a>
+      <a href="galeri.html" class="mobile-link">Galeri</a>
+      <a href="kontak.html" class="mobile-link">Kontak</a>
+      <div class="pt-3 mt-1 border-t border-white/10 flex flex-col gap-2 font-mono text-xs text-white/45">
+        <a href="mailto:kabinetnawasena8@gmail.com" class="hover:text-white transition break-all">✉ kabinetnawasena8@gmail.com</a>
+        <span>Universitas Amikom Purwokerto</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO (foto sebagai background, bukan bagian terpisah) =====================
+     Ganti src di bawah dengan path foto kamu (mis. "assets/foto-hero.jpg").
+     Foto mengisi penuh section ini (object-cover) lalu ditumpuk dengan gradasi gelap
+     supaya judul "Berkarya Bersama..." tetap terbaca jelas di atasnya. -->
+<section class="relative pt-28 sm:pt-40 lg:pt-44 pb-20 sm:pb-28 px-5 sm:px-8 text-white overflow-hidden">
+  <div class="placeholder-photo absolute inset-0"></div>
+  <img
+    src="assets/foto-hero.jpg"
+    alt=""
+    class="absolute inset-0 w-full h-full object-cover object-[22%_28%] sm:object-[30%_22%] lg:object-center"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+    onerror="this.style.display='none'">
+  <div class="absolute inset-0 bg-gradient-to-b from-[#0A0B12]/96 via-[#0A0B12]/82 to-[#0A0B12]/96"></div>
+  <div class="absolute inset-0" style="background:radial-gradient(1100px 560px at 12% -10%, rgba(124,92,252,.35), transparent 60%), radial-gradient(900px 680px at 100% 15%, rgba(69,214,192,.16), transparent 55%);"></div>
+  <div class="grain"></div>
+
+  <div class="max-w-5xl mx-auto relative grid lg:grid-cols-[1.1fr_.9fr] gap-10 lg:gap-14 items-center">
+    <div>
+      <h1 class="font-display font-bold text-[2rem] leading-[1.15] sm:text-[2.6rem] sm:leading-[1.1] lg:text-5xl lg:leading-[1.08] fade-up">
+        Berkarya Bersama,<br>
+        <span class="bg-gradient-to-r from-[#A990FF] to-[#7C5CFC] bg-clip-text text-transparent">Informatika Berjaya!!</span>
+      </h1>
+      <div class="mt-8 sm:mt-9 flex flex-wrap gap-3 fade-up">
+        <a href="program-kerja.html" class="px-6 py-3 rounded-full bg-white text-[#0A0B12] font-display font-semibold text-sm hover:bg-[#45D6C0] hover:text-[#0A0B12] transition">Lihat Program Kerja</a>
+        <a href="pengurus.html" class="px-6 py-3 rounded-full border border-white/25 text-white font-display font-semibold text-sm hover:bg-white/10 transition">Kenali Pengurus</a>
+      </div>
+    </div>
+
+    <!-- SIGNATURE ELEMENT: terminal panel menggantikan grid statistik generik -->
+    <div class="term-window fade-up">
+      <div class="term-bar">
+        <span class="term-dot" style="--c:#FF6159"></span>
+        <span class="term-dot" style="--c:#FFC02E"></span>
+        <span class="term-dot" style="--c:#28C840"></span>
+        <span class="term-path">minat-bakat — zsh</span>
+      </div>
+      <div class="term-body">
+        <p><span class="term-prompt">mahasiswa@informatika</span><span class="term-sep">:~$</span> whoami</p>
+        <p class="term-out">Divisi Minat & Bakat — Kabinet Nawasena</p>
+        <p><span class="term-prompt">mahasiswa@informatika</span><span class="term-sep">:~$</span> cat status.json</p>
+        <p class="term-out">{<br>&nbsp;&nbsp;"organisasi": "HMPS Informatika",<br>&nbsp;&nbsp;"kabinet": "Nawasena",<br>&nbsp;&nbsp;"program-kerja": 4,<br>&nbsp;&nbsp;"periode": 2026<br>}</p>
+        <p><span class="term-prompt">mahasiswa@informatika</span><span class="term-sep">:~$</span> <span class="term-cursor">▍</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RINGKASAN MENU — directory listing ===================== -->
+<section class="px-5 sm:px-8 py-16 sm:py-24 bg-[#F1F2F8]">
+  <div class="max-w-4xl mx-auto">
+    <p class="eyebrow text-[#7C5CFC] mb-4 fade-up">jelajahi halaman</p>
+    <h2 class="font-display font-bold text-2xl sm:text-3xl lg:text-4xl text-[#1A0B2E] max-w-2xl fade-up">Semua tentang divisi, tertata seperti direktori proyek.</h2>
+
+    <div class="mt-8 sm:mt-10 dir-list fade-up">
+      <a href="tentang.html" class="dir-row">
+        <span class="dir-icon"><i class="fi fi-sr-copy"></i></span>
+        <span class="flex-1 min-w-0">
+          <span class="dir-name block">tentang.md</span>
+          <span class="text-[#3A2E52]/65 text-sm mt-0.5 block">Visi, misi, dan ruang lingkup Minat & Bakat.</span>
+        </span>
+        <span class="dir-arrow font-mono">→</span>
+      </a>
+      <a href="program-kerja.html" class="dir-row">
+        <span class="dir-icon"><i class="fi fi-sr-copy"></i></span>
+        <span class="flex-1 min-w-0">
+          <span class="dir-name block">program-kerja.json</span>
+          <span class="text-[#3A2E52]/65 text-sm mt-0.5 block">IF Database, SKETSA, IF Sport, Makrab 2026.</span>
+        </span>
+        <span class="dir-arrow font-mono">→</span>
+      </a>
+      <a href="pengurus.html" class="dir-row">
+        <span class="dir-icon"><i class="fi fi-sr-copy"></i></span>
+        <span class="flex-1 min-w-0">
+          <span class="dir-name block">pengurus.csv</span>
+          <span class="text-[#3A2E52]/65 text-sm mt-0.5 block">Wajah-wajah di balik setiap program kerja.</span>
+        </span>
+        <span class="dir-arrow font-mono">→</span>
+      </a>
+      <a href="galeri.html" class="dir-row">
+        <span class="dir-icon"><i class="fi fi-sr-copy"></i></span>
+        <span class="flex-1 min-w-0">
+          <span class="dir-name block">galeri/</span>
+          <span class="text-[#3A2E52]/65 text-sm mt-0.5 block">Dokumentasi momen dari setiap kegiatan.</span>
+        </span>
+        <span class="dir-arrow font-mono">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER (LENGKAP) ===================== -->
+<footer class="px-5 sm:px-8 pt-16 pb-10 bg-[#0A0B12] text-white relative overflow-hidden">
+  <div class="grain"></div>
+  <div class="max-w-6xl mx-auto relative">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+      <div>
+        <a href="index.html" class="flex items-center gap-2.5 mb-4">
+          <span class="logo-mark w-9 h-9 rounded-lg bg-gradient-to-br from-[#7C5CFC] to-[#4C3599] flex items-center justify-center text-white text-sm"><i class="fi fi-br-trophy"></i></span>
+          <span class="font-display font-semibold text-white text-sm">Minat & Bakat</span>
+        </a>
+        <p class="text-white/50 text-sm leading-relaxed max-w-xs">Wadah pengembangan minat, bakat, dan prestasi mahasiswa Informatika, Universitas Amikom Purwokerto.</p>
+      </div>
+
+      <div>
+        <p class="font-mono text-[11px] text-white/40 uppercase tracking-wide mb-4">navigasi</p>
+        <ul class="space-y-2.5 text-sm text-white/65">
+          <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
+          <li><a href="tentang.html" class="hover:text-white transition">Tentang</a></li>
+          <li><a href="program-kerja.html" class="hover:text-white transition">Program Kerja</a></li>
+          <li><a href="pengurus.html" class="hover:text-white transition">Pengurus</a></li>
+          <li><a href="galeri.html" class="hover:text-white transition">Galeri</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-mono text-[11px] text-white/40 uppercase tracking-wide mb-4">kontak</p>
+        <ul class="space-y-2.5 text-sm text-white/65">
+          <li><a href="mailto:kabinetnawasena8@gmail.com" class="hover:text-white transition break-all">kabinetnawasena8@gmail.com</a></li>
+          <li><a href="kontak.html" class="hover:text-white transition">@hmps_informatika</a></li>
+          <li class="text-white/50">Universitas Amikom Purwokerto</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-mono text-[11px] text-white/40 uppercase tracking-wide mb-4">status</p>
+        <a href="kontak.html" class="inline-block px-5 py-2.5 rounded-full border border-white/25 text-sm hover:bg-white/10 transition">Hubungi Kami →</a>
+      </div>
+    </div>
+
+    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-between text-xs text-white/35 font-mono">
+      <p>© 2026 Divisi Minat & Bakat — HMPS Informatika, Universitas Amikom Purwokerto.</p>
+      <p>Kabinet Nawasena</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data-proker.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

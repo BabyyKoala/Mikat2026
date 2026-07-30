@@ -1,0 +1,280 @@
+:root{
+  --ink:#0A0B12;
+  --panel:#12141F;
+  --panel-2:#171B2A;
+  --line:#242A3D;
+  --text:#ECEEF5;
+  --muted:#8B90A6;
+
+  --violet:#7C5CFC;
+  --violet-deep:#4C3599;
+  --cyan:#45D6C0;
+  --amber:#F2B84B;
+
+  --mist:#F1F2F8;
+  --mist-line:#E2E4EF;
+  --mist-text:#333850;
+  --paper:#FFFFFF;
+}
+
+*{ box-sizing:border-box; }
+
+html{
+  scroll-behavior:smooth;
+  -webkit-text-size-adjust:100%;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--mist);
+  color:var(--mist-text);
+  overflow-x:hidden;
+  width:100%;
+}
+
+img{ max-width:100%; display:block; }
+
+.font-display{font-family:'Space Grotesk',sans-serif;}
+.font-mono{font-family:'JetBrains Mono',monospace;}
+
+/* ===================== EYEBROW — code-comment style label ===================== */
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-weight:500;
+  font-size:.78rem;
+  letter-spacing:.01em;
+  display:inline-flex;
+  align-items:center;
+}
+.eyebrow::before{
+  content:'// ';
+  opacity:.55;
+}
+
+/* ===================== BACKGROUND GRID (informatics motif, replaces noise grain) ===================== */
+.grain{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size:34px 34px;
+  -webkit-mask-image:linear-gradient(180deg, rgba(0,0,0,.9), rgba(0,0,0,.15));
+  mask-image:linear-gradient(180deg, rgba(0,0,0,.9), rgba(0,0,0,.15));
+  pointer-events:none;
+}
+
+.hero-gradient{
+  background:
+    radial-gradient(1100px 560px at 12% -10%, rgba(124,92,252,.35), transparent 60%),
+    radial-gradient(900px 680px at 100% 15%, rgba(69,214,192,.14), transparent 55%),
+    linear-gradient(180deg, var(--ink) 0%, #10121C 55%, var(--ink) 100%);
+}
+
+/* ===================== HEADER / NAV (editor tab-bar feel) ===================== */
+#top{font-family:'Inter',sans-serif;}
+.logo-mark{
+  font-family:'JetBrains Mono',monospace;
+  font-weight:600;
+}
+.nav-link{position:relative;white-space:nowrap;}
+.nav-link::after{
+  content:'';position:absolute;left:0;bottom:-4px;height:2px;width:0;
+  background:var(--cyan);transition:width .25s ease;
+}
+.nav-link:hover::after{width:100%;}
+.nav-link.is-active{color:#fff;}
+.nav-link.is-active::after{width:100%;background:var(--violet);}
+.mobile-link.is-active{color:#fff;font-weight:600;}
+
+.status-dot{
+  width:7px;height:7px;border-radius:999px;
+  background:var(--cyan);
+  box-shadow:0 0 0 3px rgba(69,214,192,.18);
+  animation:pulse 2.2s ease-in-out infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:1;}
+  50%{opacity:.45;}
+}
+
+/* ===================== TERMINAL PANEL (signature element) ===================== */
+.term-window{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 30px 60px -25px rgba(0,0,0,.6);
+  max-width:100%;
+}
+.term-bar{
+  display:flex;align-items:center;gap:8px;
+  padding:.7rem 1rem;
+  background:var(--panel-2);
+  border-bottom:1px solid var(--line);
+}
+.term-dot{
+  width:10px;height:10px;border-radius:999px;
+  background:var(--c,#666);
+  display:inline-block;
+  flex-shrink:0;
+}
+.term-path{
+  margin-left:.5rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.72rem;
+  color:var(--muted);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.term-body{
+  padding:1.25rem 1.1rem 1.4rem;
+  font-family:'JetBrains Mono',monospace;
+  font-size:.76rem;
+  line-height:1.85;
+  overflow-x:auto;
+}
+.term-prompt{color:var(--cyan);}
+.term-sep{color:var(--muted);}
+.term-out{
+  color:rgba(236,238,245,.82);
+  padding-left:0;
+  margin-top:-.15rem;
+  margin-bottom:.35rem;
+  word-break:break-word;
+}
+.term-cursor{
+  display:inline-block;
+  color:var(--cyan);
+  animation:blink 1s step-end infinite;
+}
+@keyframes blink{
+  0%,100%{opacity:1;}
+  50%{opacity:0;}
+}
+
+@media (min-width:640px){
+  .term-body{ font-size:.8rem; padding:1.35rem 1.4rem 1.5rem; }
+}
+
+/* ===================== DIRECTORY LIST (homepage menu teaser) ===================== */
+.dir-list{
+  border:1px solid var(--mist-line);
+  border-radius:16px;
+  overflow:hidden;
+  background:var(--paper);
+}
+.dir-row{
+  display:flex;
+  align-items:flex-start;
+  gap:.85rem;
+  padding:1.05rem 1.1rem;
+  border-bottom:1px solid var(--mist-line);
+  transition:background .2s ease, padding-left .2s ease;
+}
+.dir-row:last-child{border-bottom:none;}
+.dir-row:hover{background:var(--mist);padding-left:1.4rem;}
+.dir-icon{
+  width:2.15rem;height:2.15rem;border-radius:9px;
+  background:var(--mist);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'JetBrains Mono',monospace;
+  font-weight:600;
+  font-size:.85rem;
+  color:var(--violet);
+  flex-shrink:0;
+}
+.dir-name{
+  font-family:'JetBrains Mono',monospace;
+  font-weight:600;
+  font-size:.86rem;
+  color:#1A0B2E;
+  word-break:break-word;
+}
+.dir-arrow{
+  margin-left:auto;
+  color:var(--muted);
+  transition:transform .2s ease, color .2s ease;
+  flex-shrink:0;
+}
+.dir-row:hover .dir-arrow{transform:translateX(3px);color:var(--violet);}
+
+@media (min-width:640px){
+  .dir-row{ padding:1.15rem 1.25rem; gap:1rem; }
+  .dir-row:hover{ padding-left:1.55rem; }
+}
+
+/* ===================== HASHTAG CHIPS ===================== */
+.chip-tag{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.74rem;
+  font-weight:500;
+  color:var(--violet-deep);
+  background:var(--mist);
+  border:1px solid var(--mist-line);
+  padding:.4rem .8rem;
+  border-radius:8px;
+  white-space:nowrap;
+}
+
+/* ===================== TODO NOTE (used on pengurus/galeri as a work-in-progress marker) ===================== */
+.todo-note{
+  font-family:'JetBrains Mono',monospace;
+  font-size:.76rem;
+  color:var(--violet-deep);
+  background:var(--mist);
+  border:1px solid var(--mist-line);
+  padding:.5rem 1rem;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+}
+.todo-note::before{
+  content:'TODO';
+  font-weight:700;
+  color:var(--amber);
+}
+
+/* ===================== CARDS ===================== */
+.card-hover{transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, border-color .35s ease;}
+.card-hover:hover{transform:translateY(-6px);}
+
+.placeholder-photo{
+  background:
+    repeating-linear-gradient(135deg, rgba(124,92,252,.16) 0 10px, rgba(124,92,252,.06) 10px 20px),
+    linear-gradient(160deg, #ECEBFB, #DFDCF7);
+}
+
+/* ===================== PROGRAM KERJA ITEMS ===================== */
+details > summary{list-style:none;cursor:pointer;}
+details > summary::-webkit-details-marker{display:none;}
+details[open] .chev{transform:rotate(180deg);}
+.chev{transition:transform .3s ease;flex-shrink:0;}
+
+.proker-item{transition:border-color .25s ease, background .25s ease;}
+.proker-item:hover{border-color:var(--violet);}
+
+.filter-btn{font-family:'JetBrains Mono',monospace;transition:background .2s ease, color .2s ease, border-color .2s ease;white-space:nowrap;}
+.filter-btn::before{content:'--';opacity:.5;margin-right:.15rem;}
+
+.timeline-line{background:linear-gradient(180deg, var(--violet), transparent);}
+
+/* ===================== MISC ===================== */
+.menu-teaser-card{transition:transform .3s ease, border-color .3s ease;}
+.menu-teaser-card:hover{transform:translateY(-4px);border-color:var(--violet);}
+
+.fade-up{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+.fade-up.in{opacity:1; transform:translateY(0);}
+
+::selection{background:var(--violet);color:#fff;}
+
+/* ===================== SMALL-SCREEN REFINEMENTS ===================== */
+@media (max-width:380px){
+  .term-body{ font-size:.7rem; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .fade-up{transition:none;opacity:1;transform:none;}
+  .status-dot, .term-cursor{animation:none;}
+}

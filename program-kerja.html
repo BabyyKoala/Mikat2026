@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Program Kerja — Minat & Bakat HMPS Informatika</title>
+<meta name="description" content="Program kerja Divisi Minat & Bakat HMPS Informatika Universitas Amikom Purwokerto: IF Database, SKETSA, IF Sport, dan Makrab IF 2026.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-rounded/css/uicons-bold-rounded.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .logo-mark i{ font-size:1rem; line-height:1; }
+</style>
+</head>
+
+<body class="antialiased">
+
+<!-- ===================== NAV ===================== -->
+<header id="top" class="fixed top-0 inset-x-0 z-50">
+  <!-- strip info institusi + kontak cepat -->
+  <div class="hidden sm:flex items-center justify-between gap-4 px-5 sm:px-8 h-8 bg-[#05060A] text-[10px] font-mono text-white/40 border-b border-white/5">
+    <p class="truncate">Himpunan Mahasiswa Program Studi Informatika — Universitas Amikom Purwokerto</p>
+    <div class="flex items-center gap-5 shrink-0">
+      <a href="mailto:kabinetnawasena8@gmail.com" class="hover:text-white transition">✉ kabinetnawasena8@gmail.com</a>
+      <a href="kontak.html" class="hover:text-white transition">@hmps_informatika</a>
+    </div>
+  </div>
+
+  <div class="backdrop-blur-md bg-[#0A0B12]/75 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-2.5 group shrink-0">
+        <span class="logo-mark w-9 h-9 rounded-lg bg-gradient-to-br from-[#7C5CFC] to-[#4C3599] flex items-center justify-center text-white text-sm shrink-0"><i class="fi fi-br-trophy"></i></span>
+        <span class="font-display font-semibold text-white text-sm leading-tight">Minat &amp; Bakat<br><span class="font-mono text-[#45D6C0] text-[11px] font-normal tracking-wide">hmps.informatika</span></span>
+      </a>
+      <nav class="hidden md:flex items-center gap-5 lg:gap-8 text-sm text-white/80">
+        <a href="index.html" class="nav-link hover:text-white">Beranda</a>
+        <a href="tentang.html" class="nav-link hover:text-white">Tentang</a>
+        <a href="program-kerja.html" class="nav-link hover:text-white">Program Kerja</a>
+        <a href="pengurus.html" class="nav-link hover:text-white">Pengurus</a>
+        <a href="galeri.html" class="nav-link hover:text-white">Galeri</a>
+        <a href="kontak.html" class="nav-link hover:text-white">Kontak</a>
+      </nav>
+
+      <button id="menuBtn" class="md:hidden text-white p-2 -mr-2" aria-label="Buka menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 bg-[#0A0B12]/95 px-5 py-4 flex flex-col gap-4 text-white/85 text-sm">
+      <a href="index.html" class="mobile-link">Beranda</a>
+      <a href="tentang.html" class="mobile-link">Tentang</a>
+      <a href="program-kerja.html" class="mobile-link">Program Kerja</a>
+      <a href="pengurus.html" class="mobile-link">Pengurus</a>
+      <a href="galeri.html" class="mobile-link">Galeri</a>
+      <a href="kontak.html" class="mobile-link">Kontak</a>
+      <div class="pt-3 mt-1 border-t border-white/10 flex flex-col gap-2 font-mono text-xs text-white/45">
+        <a href="mailto:kabinetnawasena8@gmail.com" class="hover:text-white transition break-all">✉ kabinetnawasena8@gmail.com</a>
+        <span>Universitas Amikom Purwokerto</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== KONTEN PROGRAM KERJA ===================== -->
+<section class="px-5 sm:px-8 pt-28 sm:pt-40 lg:pt-44 pb-20 sm:pb-24 bg-[#12141F] text-white relative overflow-hidden min-h-screen">
+  <div class="grain"></div>
+  <div class="max-w-5xl mx-auto relative">
+    <p class="eyebrow text-[#45D6C0] mb-4 fade-up">program kerja</p>
+    <h1 class="font-display font-bold text-3xl sm:text-4xl lg:text-5xl fade-up">Dari pendataan sampai perayaan.</h1>
+    <p class="mt-5 max-w-xl text-white/55 text-[15px] leading-relaxed fade-up">
+      Empat program kerja utama Divisi Minat & Bakat tahun ini — mulai dari pendataan prestasi,
+      ajang kreativitas, turnamen olahraga, sampai malam keakraban. Ketuk salah satu untuk melihat detailnya.
+    </p>
+
+    <!-- Filter + legenda status -->
+    <div class="mt-8 sm:mt-9 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 fade-up">
+      <div class="flex flex-wrap gap-2" id="filterBar">
+        <button data-filter="all" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-white text-[#0A0B12]">semua</button>
+        <button data-filter="terlaksana" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold border border-white/25 text-white/80 hover:bg-white/10">terlaksana</button>
+        <button data-filter="berkelanjutan" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold border border-white/25 text-white/80 hover:bg-white/10">berkelanjutan</button>
+        <button data-filter="akan" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold border border-white/25 text-white/80 hover:bg-white/10">akan-berjalan</button>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-[11px] text-white/45">
+        <span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#45D6C0] shrink-0"></span>terlaksana — sudah selesai</span>
+        <span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#A990FF] shrink-0"></span>berkelanjutan — berjalan rutin</span>
+        <span class="inline-flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-[#F2B84B] shrink-0"></span>akan berjalan — belum mulai</span>
+      </div>
+    </div>
+
+    <div class="mt-8 sm:mt-10 grid gap-5 sm:gap-6" id="prokerList">
+      <!-- diisi otomatis oleh js/script.js berdasarkan js/data-proker.js -->
+    </div>
+
+    <p id="prokerEmpty" class="hidden mt-6 font-mono text-sm text-white/40">// tidak ada program kerja pada kategori ini.</p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER (LENGKAP) ===================== -->
+<footer class="px-5 sm:px-8 pt-16 pb-10 bg-[#0A0B12] text-white relative overflow-hidden">
+  <div class="grain"></div>
+  <div class="max-w-6xl mx-auto relative">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+      <div>
+        <a href="index.html" class="flex items-center gap-2.5 mb-4">
+          <span class="logo-mark w-9 h-9 rounded-lg bg-gradient-to-br from-[#7C5CFC] to-[#4C3599] flex items-center justify-center text-white text-sm"><i class="fi fi-br-trophy"></i></span>
+          <span class="font-display font-semibold text-white text-sm">Minat & Bakat</span>
+        </a>
+        <p class="text-white/50 text-sm leading-relaxed max-w-xs">Wadah pengembangan minat, bakat, dan prestasi mahasiswa Informatika, Universitas Amikom Purwokerto.</p>
+      </div>
+
+      <div>
+        <p class="font-mono text-[11px] text-white/40 uppercase tracking-wide mb-4">navigasi</p>
+        <ul class="space-y-2.5 text-sm text-white/65">
+          <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
+          <li><a href="tentang.html" class="hover:text-white transition">Tentang</a></li>
+          <li><a href="program-kerja.html" class="hover:text-white transition">Program Kerja</a></li>
+          <li><a href="pengurus.html" class="hover:text-white transition">Pengurus</a></li>
+          <li><a href="galeri.html" class="hover:text-white transition">Galeri</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-mono text-[11px] text-white/40 uppercase tracking-wide mb-4">kontak</p>
+        <ul class="space-y-2.5 text-sm text-white/65">
+          <li><a href="mailto:kabinetnawasena8@gmail.com" class="hover:text-white transition break-all">kabinetnawasena8@gmail.com</a></li>
+          <li><a href="kontak.html" class="hover:text-white transition">@hmps_informatika</a></li>
+          <li class="text-white/50">Universitas Amikom Purwokerto</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-mono text-[11px] text-white/40 uppercase tracking-wide mb-4">status</p>
+        <a href="kontak.html" class="inline-block px-5 py-2.5 rounded-full border border-white/25 text-sm hover:bg-white/10 transition">Hubungi Kami →</a>
+      </div>
+    </div>
+
+    <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-between text-xs text-white/35 font-mono">
+      <p>© 2026 Divisi Minat & Bakat — HMPS Informatika, Universitas Amikom Purwokerto.</p>
+      <p>Kabinet Nawasena</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data-proker.js"></script>
+<script src="js/script.js"></script>
+<script>
+  // Tampilkan pesan "kosong" saat filter tidak punya hasil.
+  // Tidak mengubah initFilter() di script.js, hanya menambah pengecekan ringan setelahnya.
+  (function () {
+    const filterBar = document.getElementById("filterBar");
+    const emptyMsg = document.getElementById("prokerEmpty");
+    if (!filterBar || !emptyMsg) return;
+
+    function checkEmpty() {
+      const items = document.querySelectorAll(".proker-item");
+      const visible = Array.from(items).some((it) => it.style.display !== "none");
+      emptyMsg.classList.toggle("hidden", visible || items.length === 0);
+    }
+
+    filterBar.addEventListener("click", () => setTimeout(checkEmpty, 0));
+  })();
+</script>
+</body>
+</html>
