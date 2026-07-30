@@ -24,7 +24,7 @@ const PROKER_DATA = [
     sasaran: "Finalis FIK Got Talent 2025 serta mahasiswa Program Studi Informatika yang memiliki prestasi akademik maupun non-akademik.",
     lingkup: "Internal",
     waktuLokasi: "6 Maret 2026 · Universitas Amikom Purwokerto",
-    PJ: "Izul Robettul Imam",
+    pesertaPJ: "Izul Robettul Imam",
     parameterKeberhasilan: {
       kualitatif: [
         "Tersusunnya database prestasi mahasiswa Informatika secara rapi dan terstruktur.",
@@ -59,7 +59,7 @@ const PROKER_DATA = [
     sasaran: "Mahasiswa Program Studi Informatika Universitas Amikom Purwokerto.",
     lingkup: "Internal",
     waktuLokasi: "Mulai 20 April 2026 (Berkelanjutan) · Universitas Amikom Purwokerto",
-    PJ: "Syahdan Jamjamii",
+    pesertaPJ: "Syahdan Jamjamii",
     parameterKeberhasilan: {
       kualitatif: [
         "Tersajinya konten inspiratif yang bermanfaat bagi mahasiswa.",
@@ -157,7 +157,7 @@ const PROKER_DATA = [
     sasaran: "Seluruh mahasiswa Program Studi Informatika Universitas Amikom Purwokerto.",
     lingkup: "Internal",
     waktuLokasi: "10–11 Oktober 2026 · Gedung Putih Baturraden",
-    PJ: "Anindya Kirana Maheswari & Isna Wasilatul Ngarofah",
+    pesertaPJ: "Anindya Kirana Maheswari & Isna Wasilatul Ngarofah",
     parameterKeberhasilan: {
       kualitatif: [
         "Terjalinnya interaksi yang lebih baik antar mahasiswa lintas angkatan.",
@@ -195,7 +195,7 @@ const PROKER_DATA = [
     sasaran: "Seluruh mahasiswa Program Studi Informatika Universitas Amikom Purwokerto.",
     lingkup: "Internal",
     waktuLokasi: "21 Juni 2026 · Gerai Land Mini Soccer Purwokerto",
-    PJ: "Irza Nur Tauhid",
+    pesertaPJ: "Irza Nur Tauhid",
     parameterKeberhasilan: {
       kualitatif: [
         "Terjalinnya kebersamaan antar mahasiswa melalui kegiatan olahraga.",
