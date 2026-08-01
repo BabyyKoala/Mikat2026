@@ -78,37 +78,36 @@
   <div class="max-w-5xl mx-auto">
 
     <!-- Foto diambil dari folder assets/galeri/ — lihat assets/galeri/README.txt untuk daftar nama file.
-         Kalau file foto belum ada, otomatis tampil pola placeholder (bukan gambar rusak). -->
+         Kalau file foto belum ada, otomatis tampil pola placeholder (bukan gambar rusak).
+
+         CATATAN PERFORMA: semua foto di halaman ini pakai loading="lazy" + decoding="async"
+         supaya browser tidak mengunduh keenam foto sekaligus di awal — tiap foto baru diunduh
+         saat mendekati area layar. Kotak foto tetap punya rasio ukuran tetap (aspect-square)
+         lewat CSS jadi tata letak tidak "loncat" selama foto belum selesai dimuat. -->
     <div class="mt-6 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 fade-up">
       <div class="relative aspect-square rounded-xl overflow-hidden">
         <div class="placeholder-photo absolute inset-0"></div>
-        <img src="assets/galeri/if-database.jpg" alt="Dokumentasi kegiatan IF Database" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
-        <span class="absolute left-3 bottom-3 sm:left-4 sm:bottom-4 font-mono text-[10px] sm:text-[11px] font-semibold text-[#4C1D95] bg-white/80 px-2 py-1 rounded">if-database</span>
+        <img src="assets/galeri/if-database.jpg" alt="Dokumentasi kegiatan IF Database" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
       </div>
       <div class="relative aspect-square rounded-xl overflow-hidden">
         <div class="placeholder-photo absolute inset-0"></div>
-        <img src="assets/galeri/sketsa-1.jpg" alt="Dokumentasi kegiatan SKETSA" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
-        <span class="absolute left-3 bottom-3 sm:left-4 sm:bottom-4 font-mono text-[10px] sm:text-[11px] font-semibold text-[#4C1D95] bg-white/80 px-2 py-1 rounded">sketsa</span>
+        <img src="assets/galeri/sketsa-1.jpg" alt="Dokumentasi kegiatan SKETSA" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
       </div>
       <div class="relative aspect-square rounded-xl overflow-hidden">
         <div class="placeholder-photo absolute inset-0"></div>
-        <img src="assets/galeri/sketsa-2.jpg" alt="Dokumentasi kegiatan SKETSA" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
-        <span class="absolute left-3 bottom-3 sm:left-4 sm:bottom-4 font-mono text-[10px] sm:text-[11px] font-semibold text-[#4C1D95] bg-white/80 px-2 py-1 rounded">sketsa</span>
+        <img src="assets/galeri/sketsa-2.jpg" alt="Dokumentasi kegiatan SKETSA" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
       </div>
       <div class="relative aspect-square rounded-xl overflow-hidden">
         <div class="placeholder-photo absolute inset-0"></div>
-        <img src="assets/galeri/if-sport-1.jpg" alt="Dokumentasi kegiatan IF Sport" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
-        <span class="absolute left-3 bottom-3 sm:left-4 sm:bottom-4 font-mono text-[10px] sm:text-[11px] font-semibold text-[#4C1D95] bg-white/80 px-2 py-1 rounded">if-sport</span>
+        <img src="assets/galeri/if-sport-1.jpg" alt="Dokumentasi kegiatan IF Sport" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
       </div>
       <div class="relative aspect-square rounded-xl overflow-hidden">
         <div class="placeholder-photo absolute inset-0"></div>
-        <img src="assets/galeri/if-sport-2.jpg" alt="Dokumentasi kegiatan IF Sport" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
-        <span class="absolute left-3 bottom-3 sm:left-4 sm:bottom-4 font-mono text-[10px] sm:text-[11px] font-semibold text-[#4C1D95] bg-white/80 px-2 py-1 rounded">if-sport</span>
+        <img src="assets/galeri/if-sport-2.jpg" alt="Dokumentasi kegiatan IF Sport" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
       </div>
       <div class="relative aspect-square rounded-xl overflow-hidden">
         <div class="placeholder-photo absolute inset-0"></div>
-        <img src="assets/galeri/makrab-2026.jpg" alt="Dokumentasi kegiatan Makrab 2026" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
-        <span class="absolute left-3 bottom-3 sm:left-4 sm:bottom-4 font-mono text-[10px] sm:text-[11px] font-semibold text-[#4C1D95] bg-white/80 px-2 py-1 rounded">makrab-2026</span>
+        <img src="assets/galeri/makrab-2026.jpg" alt="Dokumentasi kegiatan Makrab 2026" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
       </div>
     </div>
   </div>
