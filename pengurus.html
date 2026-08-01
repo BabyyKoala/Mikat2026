@@ -78,14 +78,20 @@
   <div class="max-w-5xl mx-auto">
 
     <!-- Foto diambil dari folder assets/pengurus/ — lihat assets/pengurus/README.txt untuk daftar nama file.
-         Kalau file foto belum ada, otomatis tampil pola placeholder + ikon (bukan gambar rusak). -->
+         Kalau file foto belum ada, otomatis tampil pola placeholder + ikon (bukan gambar rusak).
+
+         CATATAN PERFORMA: semua foto di halaman ini pakai loading="lazy" + decoding="async"
+         supaya tidak semuanya diunduh sekaligus saat halaman pertama kali dibuka — browser
+         akan mengunduh tiap foto tepat saat mendekati area layar (viewport), bukan di awal.
+         Kartu tetap punya rasio ukuran tetap (aspect-[3/4]) lewat CSS, jadi tata letak tidak
+         "loncat" walau foto belum selesai dimuat. -->
     <div class="mt-6 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 fade-up">
       <div class="card-hover rounded-2xl border border-[#EDE9FE] overflow-hidden">
         <div class="relative aspect-[3/4]">
           <div class="placeholder-photo absolute inset-0 flex items-center justify-center">
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#7C5CFC" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/></svg>
           </div>
-          <img src="assets/pengurus/koordinator.jpg" alt="Foto Koordinator Divisi" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+          <img src="assets/pengurus/koordinator.jpg" alt="Foto Koordinator Divisi" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
         </div>
         <div class="p-3 sm:p-4">
           <p class="font-display font-semibold text-sm text-[#1A0B2E]">Izul Robettul Imam</p>
@@ -97,7 +103,7 @@
           <div class="placeholder-photo absolute inset-0 flex items-center justify-center">
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#7C5CFC" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/></svg>
           </div>
-          <img src="assets/pengurus/isna.jpg" alt="Foto Wakil Koordinator" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+          <img src="assets/pengurus/isna.jpg" alt="Foto Wakil Koordinator" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
         </div>
         <div class="p-3 sm:p-4">
           <p class="font-display font-semibold text-sm text-[#1A0B2E]">Isna Wasilatul N</p>
@@ -109,7 +115,7 @@
           <div class="placeholder-photo absolute inset-0 flex items-center justify-center">
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#7C5CFC" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/></svg>
           </div>
-          <img src="assets/pengurus/anin.jpg" alt="Foto Anindya Kirana M" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+          <img src="assets/pengurus/anin.jpg" alt="Foto Anindya Kirana M" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
         </div>
         <div class="p-3 sm:p-4">
           <p class="font-display font-semibold text-sm text-[#1A0B2E]">Anindya Kirana M</p>
@@ -121,7 +127,7 @@
           <div class="placeholder-photo absolute inset-0 flex items-center justify-center">
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#7C5CFC" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/></svg>
           </div>
-          <img src="assets/pengurus/syahdan.jpg" alt="Foto Syahdan Jamjami" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+          <img src="assets/pengurus/syahdan.jpg" alt="Foto Syahdan Jamjami" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
         </div>
         <div class="p-3 sm:p-4">
           <p class="font-display font-semibold text-sm text-[#1A0B2E]">Syahdan Jamjami</p>
@@ -133,7 +139,7 @@
           <div class="placeholder-photo absolute inset-0 flex items-center justify-center">
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#7C5CFC" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/></svg>
           </div>
-          <img src="assets/pengurus/irza.jpg" alt="Foto Irza Nur Tauhid" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+          <img src="assets/pengurus/irza.jpg" alt="Foto Irza Nur Tauhid" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
         </div>
         <div class="p-3 sm:p-4">
           <p class="font-display font-semibold text-sm text-[#1A0B2E]">Irza Nur Tauhid</p>
@@ -145,7 +151,7 @@
           <div class="placeholder-photo absolute inset-0 flex items-center justify-center">
             <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#7C5CFC" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.5-6 8-6s8 2 8 6"/></svg>
           </div>
-          <img src="assets/pengurus/salma.jpg" alt="Foto Salma Rizqi S" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+          <img src="assets/pengurus/salma.jpg" alt="Foto Salma Rizqi S" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
         </div>
         <div class="p-3 sm:p-4">
           <p class="font-display font-semibold text-sm text-[#1A0B2E]">Salma Rizqi S</p>
@@ -158,7 +164,7 @@
       <div class="placeholder-photo absolute inset-0 flex items-center justify-center px-4 text-center">
         <p class="font-mono text-[#4C1D95] text-xs sm:text-sm font-medium">// foto bersama 6 pengurus — tempatkan di sini</p>
       </div>
-      <img src="assets/pengurus/foto-bersama.jpg" alt="Foto bersama pengurus Divisi Minat & Bakat" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'">
+      <img src="assets/pengurus/foto-bersama.jpg" alt="Foto bersama pengurus Divisi Minat & Bakat" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
     </div>
   </div>
 </section>
