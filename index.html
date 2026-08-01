@@ -6,6 +6,11 @@
 <title>Beranda — Minat & Bakat HMPS Informatika</title>
 <meta name="description" content="Portofolio Divisi Minat & Bakat HMPS Informatika Universitas Amikom Purwokerto.">
 
+<!-- Preload gambar hero (LCP) supaya browser mulai mengunduhnya sedini mungkin,
+     tanpa menunggu CSS/JS lain selesai diparsing. Ini yang paling berdampak
+     untuk mempercepat waktu render pertama halaman ini. -->
+<link rel="preload" as="image" href="assets/foto-hero.jpg" fetchpriority="high">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -70,7 +75,12 @@
 <!-- ===================== HERO (foto sebagai background, bukan bagian terpisah) =====================
      Ganti src di bawah dengan path foto kamu (mis. "assets/foto-hero.jpg").
      Foto mengisi penuh section ini (object-cover) lalu ditumpuk dengan gradasi gelap
-     supaya judul "Berkarya Bersama..." tetap terbaca jelas di atasnya. -->
+     supaya judul "Berkarya Bersama..." tetap terbaca jelas di atasnya.
+
+     CATATAN PERFORMA: ini satu-satunya gambar yang dimuat eager + fetchpriority="high"
+     (plus <link rel="preload"> di <head>) karena ini gambar LCP (Largest Contentful Paint) —
+     gambar pertama yang dilihat pengunjung. Semua gambar lain di situs ini (pengurus, galeri)
+     sengaja dibuat loading="lazy" supaya tidak berebut bandwidth dengan gambar hero ini. -->
 <section class="relative pt-28 sm:pt-40 lg:pt-44 pb-20 sm:pb-28 px-5 sm:px-8 text-white overflow-hidden">
   <div class="placeholder-photo absolute inset-0"></div>
   <img
@@ -103,7 +113,7 @@
         <span class="term-dot" style="--c:#FF6159"></span>
         <span class="term-dot" style="--c:#FFC02E"></span>
         <span class="term-dot" style="--c:#28C840"></span>
-        <span class="term-path">minat & bakat</span>
+        <span class="term-path">minat-bakat — zsh</span>
       </div>
       <div class="term-body">
         <p><span class="term-prompt">mahasiswa@informatika</span><span class="term-sep">:~$</span> whoami</p>
