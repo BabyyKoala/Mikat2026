@@ -173,9 +173,9 @@ function renderMahasiswa() {
     // supaya tinggi kartu tidak melonjak walau anggotanya banyak, dan grid 2 kolom di
     // mobile tetap terlihat rapi/sejajar.
     return `
-      <div class="mahasiswa-item rounded-2xl bg-white/[0.04] border border-white/10 p-4 sm:p-5 fade-up" data-kategori="${m.kategoriSlug}" data-search="${searchText.replace(/"/g, "&quot;")}">
-        <span class="inline-block font-mono text-[10px] uppercase tracking-wide ${color.text} ${color.bg} px-2 py-1 rounded-md">${label}</span>
-        <h3 class="font-display font-semibold text-white mt-2.5 text-[15px] sm:text-base leading-snug line-clamp-2">${m.tim}</h3>
+      <div class="mahasiswa-item rounded-2xl bg-white/[0.04] border border-white/10 p-4 sm:p-5 fade-up flex flex-col h-full" data-kategori="${m.kategoriSlug}" data-search="${searchText.replace(/"/g, "&quot;")}">
+        <span class="inline-block self-start font-mono text-[10px] uppercase tracking-wide ${color.text} ${color.bg} px-2 py-1 rounded-md">${label}</span>
+        <h3 class="font-display font-semibold text-white mt-2.5 text-[15px] sm:text-base leading-snug line-clamp-2 min-h-[2.6rem] sm:min-h-[2.75rem]">${m.tim}</h3>
         <p class="font-mono text-[10px] text-white/40 mt-1">${m.tahun} · ${m.prodi}</p>
         <details class="mt-3">
           <summary class="flex items-center justify-between gap-2 cursor-pointer">
@@ -234,6 +234,30 @@ function initMahasiswaFilter() {
   }
 
   applyFilters();
+}
+
+// Menyamakan status buka/tutup SEMUA kartu "lihat anggota" secara bersamaan:
+// begitu satu <details> dibuka/ditutup (baik lewat klik summary maupun keyboard),
+// semua <details> kartu mahasiswa lainnya ikut dibuka/ditutup ke status yang sama.
+// Guard `syncing` mencegah loop tak terbatas, karena mengubah properti `.open`
+// lewat JS juga memicu event "toggle" di beberapa browser.
+function initMahasiswaSyncToggle() {
+  const detailsList = document.querySelectorAll(".mahasiswa-item details");
+  if (!detailsList.length) return;
+
+  let syncing = false;
+
+  detailsList.forEach((d) => {
+    d.addEventListener("toggle", () => {
+      if (syncing) return;
+      syncing = true;
+      const isOpen = d.open;
+      detailsList.forEach((other) => {
+        if (other !== d) other.open = isOpen;
+      });
+      syncing = false;
+    });
+  });
 }
 
 // ===================== MENANDAI MENU AKTIF =====================
@@ -315,6 +339,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initFilter();
   initMahasiswaFilter();
+  initMahasiswaSyncToggle();
   initScrollReveal();
   initActiveNav();
 });
