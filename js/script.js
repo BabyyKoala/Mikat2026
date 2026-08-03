@@ -1,3 +1,8 @@
+// PENTING: file ini HANYA berisi logic render (fungsi-fungsi).
+// Jangan gabungkan isi js/data-proker.js ke dalam file ini, dan jangan
+// gabungkan isi file ini ke js/data-proker.js — keduanya harus tetap dua
+// file terpisah, masing-masing dimuat sekali lewat <script src="..."> di HTML.
+
 // ===================== KONFIGURASI TAMPILAN STATUS =====================
 const STATUS_LABEL = {
   terlaksana: "terlaksana",
@@ -137,6 +142,84 @@ function renderProker() {
   }).join("");
 }
 
+// ===================== RENDER IF DATABASE (halaman database.html) =====================
+const MAHASISWA_CATEGORY_LABEL = {
+  "business-plan": "Business Plan",
+  "data-science": "Data Science",
+  "iot-robotics": "IoT & Robotics",
+  "web-application": "Web Application",
+  "mobile-application": "Mobile Application"
+};
+
+function renderMahasiswa() {
+  const container = document.getElementById("mahasiswaList");
+  if (!container || typeof MAHASISWA_DATA === "undefined") return;
+
+  container.innerHTML = MAHASISWA_DATA.map((m) => {
+    const searchText = [m.tim, m.kategori, m.prodi, ...m.anggota].join(" ").toLowerCase();
+    const anggotaHtml = m.anggota.map((a) => `<li class="flex gap-2"><span class="text-[#45D6C0] font-mono shrink-0">›</span><span>${a}</span></li>`).join("");
+
+    return `
+      <div class="mahasiswa-item rounded-2xl bg-white/[0.04] border border-white/10 p-5 sm:p-6 fade-up" data-kategori="${m.kategoriSlug}" data-search="${searchText.replace(/"/g, "&quot;")}">
+        <span class="font-mono text-[11px] uppercase tracking-wide text-[#A990FF]">${m.kategori}</span>
+        <h3 class="font-display font-semibold text-lg text-white mt-2 break-words">${m.tim}</h3>
+        <p class="font-mono text-[11px] text-white/40 mt-1">${m.tahun} · ${m.prodi}</p>
+        <div class="mt-4">
+          <p class="font-mono text-white/40 text-[10px] uppercase tracking-wide mb-2">anggota (${m.anggota.length})</p>
+          <ul class="text-white/75 text-sm space-y-1.5">${anggotaHtml}</ul>
+        </div>
+      </div>`;
+  }).join("");
+}
+
+// Filter kategori + pencarian teks digabung jadi satu fungsi supaya keduanya
+// bisa aktif bersamaan (misal: kategori "Data Science" + cari "Deden").
+function initMahasiswaFilter() {
+  const filterBtns = document.querySelectorAll(".mhs-filter-btn");
+  const searchInput = document.getElementById("mahasiswaSearch");
+  const emptyMsg = document.getElementById("mahasiswaEmpty");
+  const countLabel = document.getElementById("mahasiswaCount");
+  if (!filterBtns.length && !searchInput) return;
+
+  let activeFilter = "all";
+
+  function applyFilters() {
+    const q = (searchInput?.value || "").trim().toLowerCase();
+    const items = document.querySelectorAll(".mahasiswa-item");
+    let visibleCount = 0;
+
+    items.forEach((it) => {
+      const matchFilter = activeFilter === "all" || it.dataset.kategori === activeFilter;
+      const matchSearch = !q || it.dataset.search.includes(q);
+      const show = matchFilter && matchSearch;
+      it.style.display = show ? "" : "none";
+      if (show) visibleCount++;
+    });
+
+    if (emptyMsg) emptyMsg.classList.toggle("hidden", visibleCount !== 0);
+    if (countLabel) countLabel.textContent = `Menampilkan ${visibleCount} dari ${items.length} tim`;
+  }
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach((b) => {
+        b.classList.remove("bg-white", "text-[#0A0B12]");
+        b.classList.add("border", "border-white/25", "text-white/80");
+      });
+      btn.classList.add("bg-white", "text-[#0A0B12]");
+      btn.classList.remove("border", "border-white/25", "text-white/80");
+      activeFilter = btn.dataset.filter;
+      applyFilters();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener("input", applyFilters);
+  }
+
+  applyFilters();
+}
+
 // ===================== MENANDAI MENU AKTIF =====================
 function initActiveNav() {
   const current = (location.pathname.split("/").pop() || "index.html").toLowerCase();
@@ -212,8 +295,10 @@ function initScrollReveal() {
 // ===================== INIT =====================
 document.addEventListener("DOMContentLoaded", () => {
   renderProker();
+  renderMahasiswa();
   initMobileMenu();
   initFilter();
+  initMahasiswaFilter();
   initScrollReveal();
   initActiveNav();
 });
