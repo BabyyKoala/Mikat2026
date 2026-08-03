@@ -123,7 +123,10 @@
     </div>
 
     <!-- Grid kartu tim: 2 kolom sejak mobile (sama seperti kartu foto di halaman
-         Pengurus), supaya tetap terlihat rapi & padat alih-alih memanjang ke bawah. -->
+         Pengurus), supaya tetap terlihat rapi & padat alih-alih memanjang ke bawah.
+         `items-start` ditambahkan supaya setiap kartu punya tinggi sesuai kontennya
+         sendiri (align-items default grid adalah "stretch", yang membuat SEMUA kartu
+         di satu baris ikut melebar setiap kali salah satu <details> dibuka). -->
     <div class="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4" id="mahasiswaList">
       <!-- diisi otomatis oleh js/script.js berdasarkan js/data-mahasiswa.js -->
     </div>
