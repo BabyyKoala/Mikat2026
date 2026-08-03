@@ -62,7 +62,7 @@ function renderProker() {
         ${p.tujuan ? `<div><p class="font-mono text-white/40 text-[11px] uppercase tracking-wide mb-1">tujuan</p>${renderTextOrList(p.tujuan, "text-[#7C5CFC]", "—")}</div>` : ""}
         ${p.sasaran ? `<div><p class="font-mono text-white/40 text-[11px] uppercase tracking-wide mb-1">sasaran</p><p class="text-white/80">${p.sasaran}</p></div>` : ""}
         ${p.waktuLokasi ? `<div><p class="font-mono text-white/40 text-[11px] uppercase tracking-wide mb-1">waktu & lokasi</p><p class="text-white/80">${p.waktuLokasi}</p></div>` : ""}
-        ${p.pesertaPJ ? `<div><p class="font-mono text-white/40 text-[11px] uppercase tracking-wide mb-1">penanggung jawab</p><p class="text-white/80">${p.pesertaPJ}</p></div>` : ""}
+        ${p.pesertaPJ ? `<div><p class="font-mono text-white/40 text-[11px] uppercase tracking-wide mb-1">peserta & pj</p><p class="text-white/80">${p.pesertaPJ}</p></div>` : ""}
         ${p.lingkup ? `<div><p class="font-mono text-white/40 text-[11px] uppercase tracking-wide mb-1">lingkup</p><p class="text-white/80">${p.lingkup}</p></div>` : ""}
       </div>`;
 
@@ -150,6 +150,13 @@ const MAHASISWA_CATEGORY_LABEL = {
   "web-application": "Web Application",
   "mobile-application": "Mobile Application"
 };
+const MAHASISWA_CATEGORY_COLOR = {
+  "business-plan": { text: "text-[#A990FF]", bg: "bg-[#A990FF]/10" },
+  "data-science": { text: "text-[#45D6C0]", bg: "bg-[#45D6C0]/10" },
+  "iot-robotics": { text: "text-[#F2B84B]", bg: "bg-[#F2B84B]/10" },
+  "web-application": { text: "text-[#A990FF]", bg: "bg-[#A990FF]/10" },
+  "mobile-application": { text: "text-[#45D6C0]", bg: "bg-[#45D6C0]/10" }
+};
 
 function renderMahasiswa() {
   const container = document.getElementById("mahasiswaList");
@@ -157,17 +164,26 @@ function renderMahasiswa() {
 
   container.innerHTML = MAHASISWA_DATA.map((m) => {
     const searchText = [m.tim, m.kategori, m.prodi, ...m.anggota].join(" ").toLowerCase();
-    const anggotaHtml = m.anggota.map((a) => `<li class="flex gap-2"><span class="text-[#45D6C0] font-mono shrink-0">›</span><span>${a}</span></li>`).join("");
+    const label = MAHASISWA_CATEGORY_LABEL[m.kategoriSlug] || m.kategori;
+    const color = MAHASISWA_CATEGORY_COLOR[m.kategoriSlug] || { text: "text-[#A990FF]", bg: "bg-[#A990FF]/10" };
+    const anggotaHtml = m.anggota.map((a) => `<li class="flex gap-1.5"><span class="text-[#45D6C0] font-mono shrink-0">›</span><span>${a}</span></li>`).join("");
 
+    // Kartu kompak & seragam (seperti kartu foto di halaman Pengurus): badge kategori,
+    // nama tim (maks 2 baris), lalu daftar anggota disembunyikan di balik <details> —
+    // supaya tinggi kartu tidak melonjak walau anggotanya banyak, dan grid 2 kolom di
+    // mobile tetap terlihat rapi/sejajar.
     return `
-      <div class="mahasiswa-item rounded-2xl bg-white/[0.04] border border-white/10 p-5 sm:p-6 fade-up" data-kategori="${m.kategoriSlug}" data-search="${searchText.replace(/"/g, "&quot;")}">
-        <span class="font-mono text-[11px] uppercase tracking-wide text-[#A990FF]">${m.kategori}</span>
-        <h3 class="font-display font-semibold text-lg text-white mt-2 break-words">${m.tim}</h3>
-        <p class="font-mono text-[11px] text-white/40 mt-1">${m.tahun} · ${m.prodi}</p>
-        <div class="mt-4">
-          <p class="font-mono text-white/40 text-[10px] uppercase tracking-wide mb-2">anggota (${m.anggota.length})</p>
-          <ul class="text-white/75 text-sm space-y-1.5">${anggotaHtml}</ul>
-        </div>
+      <div class="mahasiswa-item rounded-2xl bg-white/[0.04] border border-white/10 p-4 sm:p-5 fade-up" data-kategori="${m.kategoriSlug}" data-search="${searchText.replace(/"/g, "&quot;")}">
+        <span class="inline-block font-mono text-[10px] uppercase tracking-wide ${color.text} ${color.bg} px-2 py-1 rounded-md">${label}</span>
+        <h3 class="font-display font-semibold text-white mt-2.5 text-[15px] sm:text-base leading-snug line-clamp-2">${m.tim}</h3>
+        <p class="font-mono text-[10px] text-white/40 mt-1">${m.tahun} · ${m.prodi}</p>
+        <details class="mt-3">
+          <summary class="flex items-center justify-between gap-2 cursor-pointer">
+            <span class="font-mono text-white/45 text-[10px] uppercase tracking-wide">${m.anggota.length} anggota</span>
+            <svg class="chev shrink-0 text-white/40" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </summary>
+          <ul class="mt-2.5 text-white/75 text-[13px] leading-relaxed space-y-1">${anggotaHtml}</ul>
+        </details>
       </div>`;
   }).join("");
 }
