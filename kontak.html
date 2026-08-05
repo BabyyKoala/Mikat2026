@@ -33,6 +33,21 @@
     line-height:1;
   }
   .logo-mark i{ font-size:1rem; line-height:1; }
+
+  /* Form kirim pesan cepat */
+  .cf-field{
+    width:100%;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:.75rem;
+    padding:.75rem 1rem;
+    font-size:.875rem;
+    color:#fff;
+    transition:border-color .2s ease;
+  }
+  .cf-field::placeholder{ color:rgba(255,255,255,.35); }
+  .cf-field:focus{ outline:none; border-color:#7C5CFC; }
+  .cf-field option{ background:#12141F; }
 </style>
 </head>
 
@@ -45,7 +60,7 @@
     <p class="truncate">Himpunan Mahasiswa Program Studi Informatika — Universitas Amikom Purwokerto</p>
     <div class="flex items-center gap-5 shrink-0">
       <a href="mailto:kabinetnawasena8@gmail.com" class="hover:text-white transition">✉ kabinetnawasena8@gmail.com</a>
-      <a href="kontak.html" class="hover:text-white transition">@hmps_informatika</a>
+      <a href="https://www.instagram.com/hmps_informatika/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">@hmps_informatika</a>
     </div>
   </div>
 
@@ -59,6 +74,7 @@
         <a href="index.html" class="nav-link hover:text-white">Beranda</a>
         <a href="tentang.html" class="nav-link hover:text-white">Tentang</a>
         <a href="program-kerja.html" class="nav-link hover:text-white">Program Kerja</a>
+        <a href="database.html" class="nav-link hover:text-white">Database</a>
         <a href="pengurus.html" class="nav-link hover:text-white">Pengurus</a>
         <a href="galeri.html" class="nav-link hover:text-white">Galeri</a>
         <a href="kontak.html" class="nav-link hover:text-white">Kontak</a>
@@ -72,6 +88,7 @@
       <a href="index.html" class="mobile-link">Beranda</a>
       <a href="tentang.html" class="mobile-link">Tentang</a>
       <a href="program-kerja.html" class="mobile-link">Program Kerja</a>
+      <a href="database.html" class="mobile-link">Database</a>
       <a href="pengurus.html" class="mobile-link">Pengurus</a>
       <a href="galeri.html" class="mobile-link">Galeri</a>
       <a href="kontak.html" class="mobile-link">Kontak</a>
@@ -84,7 +101,7 @@
 </header>
 
 <!-- ===================== KONTEN KONTAK ===================== -->
-<section class="hero-gradient relative pt-32 sm:pt-40 lg:pt-44 pb-20 sm:pb-24 px-5 sm:px-8 text-white overflow-hidden min-h-screen">
+<section class="hero-gradient relative pt-32 sm:pt-40 lg:pt-44 pb-20 sm:pb-24 px-5 sm:px-8 text-white overflow-hidden">
   <div class="grain"></div>
   <div class="max-w-5xl mx-auto relative">
     <p class="eyebrow text-[#45D6C0] mb-4 fade-up">kontak</p>
@@ -124,6 +141,56 @@
         </div>
       </a>
     </div>
+
+    <!-- ===================== FORM KIRIM PESAN CEPAT =====================
+         Situs ini statis (GitHub Pages, tanpa server), jadi form ini TIDAK mengirim
+         data ke database manapun. Saat tombol "Kirim" ditekan, browser akan membuka
+         aplikasi email default pengunjung (mailto:) dengan subjek & isi pesan yang
+         sudah otomatis terisi dari form ini — tinggal ditinjau lalu benar-benar
+         dikirim dari sana. Ini cara paling aman & tanpa biaya untuk situs statis;
+         kalau ke depannya mau pesan masuk otomatis ke suatu tempat (Google Sheet,
+         Telegram, dsb) itu perlu layanan pihak ketiga terpisah. -->
+    <div class="mt-14 sm:mt-16 max-w-2xl fade-up">
+      <p class="eyebrow text-[#7C5CFC] mb-4">kirim pesan cepat</p>
+      <h2 class="font-display font-bold text-2xl sm:text-3xl mb-2">Atau, langsung tulis di sini.</h2>
+      <p class="text-white/55 text-sm mb-8 leading-relaxed">
+        Isi form ini — nanti aplikasi email di perangkatmu akan terbuka otomatis dengan pesan
+        yang sudah terisi, tinggal ditinjau dan dikirim.
+      </p>
+
+      <form id="contactForm" class="space-y-4" novalidate>
+        <div>
+          <label for="cf-name" class="font-mono text-[11px] text-white/40 uppercase tracking-wide block mb-1.5">nama</label>
+          <input id="cf-name" name="name" type="text" required placeholder="Nama kamu" class="cf-field">
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="cf-email" class="font-mono text-[11px] text-white/40 uppercase tracking-wide block mb-1.5">email kamu <span class="normal-case text-white/30">(opsional)</span></label>
+            <input id="cf-email" name="email" type="email" placeholder="agar kami bisa balas" class="cf-field">
+          </div>
+          <div>
+            <label for="cf-subject" class="font-mono text-[11px] text-white/40 uppercase tracking-wide block mb-1.5">perihal</label>
+            <select id="cf-subject" name="subject" class="cf-field">
+              <option>Kolaborasi Program Kerja</option>
+              <option>Pendaftaran Narasumber SKETSA</option>
+              <option>Info Prestasi Mahasiswa</option>
+              <option>Lainnya</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="cf-message" class="font-mono text-[11px] text-white/40 uppercase tracking-wide block mb-1.5">pesan</label>
+          <textarea id="cf-message" name="message" required rows="4" placeholder="Tulis pesanmu di sini…" class="cf-field resize-none"></textarea>
+        </div>
+
+        <div class="flex items-center gap-4 pt-1">
+          <button type="submit" class="px-6 py-3 rounded-full bg-white text-[#0A0B12] font-display font-semibold text-sm hover:bg-[#45D6C0] transition">Kirim via Email →</button>
+          <p id="cfHint" class="font-mono text-[11px] text-white/35"></p>
+        </div>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -146,6 +213,7 @@
           <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
           <li><a href="tentang.html" class="hover:text-white transition">Tentang</a></li>
           <li><a href="program-kerja.html" class="hover:text-white transition">Program Kerja</a></li>
+          <li><a href="database.html" class="hover:text-white transition">Database</a></li>
           <li><a href="pengurus.html" class="hover:text-white transition">Pengurus</a></li>
           <li><a href="galeri.html" class="hover:text-white transition">Galeri</a></li>
         </ul>
@@ -155,7 +223,7 @@
         <p class="font-mono text-[11px] text-white/40 uppercase tracking-wide mb-4">kontak</p>
         <ul class="space-y-2.5 text-sm text-white/65">
           <li><a href="mailto:kabinetnawasena8@gmail.com" class="hover:text-white transition break-all">kabinetnawasena8@gmail.com</a></li>
-          <li><a href="kontak.html" class="hover:text-white transition">@hmps_informatika</a></li>
+          <li><a href="https://www.instagram.com/hmps_informatika/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">@hmps_informatika</a></li>
           <li class="text-white/50">Universitas Amikom Purwokerto</li>
         </ul>
       </div>
@@ -174,6 +242,45 @@
 </footer>
 
 <script src="js/data-proker.js"></script>
+<script src="js/data-mahasiswa.js"></script>
 <script src="js/script.js"></script>
+<script>
+  // Form kirim pesan cepat — murni client-side, membuka aplikasi email default
+  // pengunjung lewat skema mailto: dengan subjek & isi yang sudah terisi.
+  (function () {
+    const form = document.getElementById("contactForm");
+    const hint = document.getElementById("cfHint");
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("cf-name").value.trim();
+      const email = document.getElementById("cf-email").value.trim();
+      const subject = document.getElementById("cf-subject").value;
+      const message = document.getElementById("cf-message").value.trim();
+
+      if (!name || !message) {
+        if (hint) hint.textContent = "Nama dan pesan wajib diisi.";
+        return;
+      }
+
+      const bodyLines = [
+        `Nama: ${name}`,
+        email ? `Email pengirim: ${email}` : null,
+        "",
+        message
+      ].filter((line) => line !== null);
+
+      const mailto =
+        "mailto:kabinetnawasena8@gmail.com" +
+        "?subject=" + encodeURIComponent("[Situs] " + subject) +
+        "&body=" + encodeURIComponent(bodyLines.join("\n"));
+
+      if (hint) hint.textContent = "Membuka aplikasi email…";
+      window.location.href = mailto;
+    });
+  })();
+</script>
 </body>
 </html>
