@@ -145,7 +145,7 @@ const PROKER_DATA = [
   },
   {
     nama: "Makrab IF",
-    status: "berkelanjutan",
+    status: "terlaksana",
     ringkasan: "Malam Keakraban Informatika — kegiatan kebersamaan lintas angkatan, dijadwalkan 10–11 Oktober 2026 di Gedung Putih Baturraden, persiapan sedang berjalan.",
     deskripsi: "Makrab IF merupakan kegiatan kebersamaan mahasiswa Informatika yang bertujuan mempererat hubungan antar mahasiswa lintas angkatan. Kegiatan dikemas dalam suasana santai melalui berbagai aktivitas seperti permainan kelompok, sharing session, pentas seni, api unggun, refleksi, dan kegiatan kebersamaan lainnya. Melalui kegiatan ini diharapkan tercipta rasa kekeluargaan, solidaritas, serta kekompakan dalam keluarga besar Informatika.",
     tujuan: [
@@ -154,7 +154,7 @@ const PROKER_DATA = [
       "Menumbuhkan solidaritas dan kekompakan.",
       "Membangun komunikasi yang baik antar angkatan."
     ],
-    sasaran: "Seluruh mahasiswa Program Studi Informatika Universitas Amikom Purwokerto.",
+    sasaran: "Seluruh mahasiswa Program Studi Informatika Angkatan 2026",
     lingkup: "Internal",
     waktuLokasi: "10–11 Oktober 2026 · Gedung Putih Baturraden",
     pesertaPJ: "Anindya Kirana Maheswari & Isna Wasilatul Ngarofah",
