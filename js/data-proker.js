@@ -88,17 +88,6 @@ const PROKER_DATA = [
       {
         nomor: 3,
         status: "Perencanaan",
-        judul: "Tim Kurawal",
-        topik: "Juara 3 Proxocoris International Competition 2026 (tingkat internasional).",
-        anggota: [
-          "Firman Zamzami Aziz (23SA11A018)",
-          "Muhammad Agus Priyanto (23SA11A015)",
-          "Gilang Dely Mukti (23SA11A006)"
-        ]
-      },
-      {
-        nomor: 4,
-        status: "Perencanaan",
         judul: "Tim P2MW ANYAMI",
         topik: "Inovasi Circular Craft Berbasis Hilirisasi Lidi Kelapa.",
         anggota: [
@@ -108,6 +97,17 @@ const PROKER_DATA = [
           "Rahmat Hidayat (24SA11A092, Informatika)",
           "Mida Aiska Pasha (23SA21A163, Sistem Informasi)",
           "Luthfiyah Salsabila (23SB11A030, Bisnis Digital)"
+        ]
+      },
+      {
+        nomor: 4,
+        status: "Perencanaan",
+        judul: "Tim Kurawal",
+        topik: "Juara 3 Proxocoris International Competition 2026 (tingkat internasional).",
+        anggota: [
+          "Firman Zamzami Aziz (23SA11A018)",
+          "Muhammad Agus Priyanto (23SA11A015)",
+          "Gilang Dely Mukti (23SA11A006)"
         ]
       },
       {
@@ -129,11 +129,11 @@ const PROKER_DATA = [
         anggota: ["Alif Satria Bahari (23SA11A058)"]
       }
     ],
-    timeline: [
+    timeline: [ 
       { tanggal: "Eps 1 — Selesai", kegiatan: "PKM Daureka — instagram.com/pkm_daureka" },
       { tanggal: "Eps 2 — Opsi Narasumber", kegiatan: "Muhammad Abdiel Al Hafiz, Google Student Ambassador" },
-      { tanggal: "Eps 3 — Opsi Narasumber", kegiatan: "Tim Kurawal, Juara 3 Proxocoris International Competition 2026" },
-      { tanggal: "Eps 4 — Opsi Narasumber", kegiatan: "Tim P2MW ANYAMI — Circular Craft Hilirisasi Lidi Kelapa" },
+      { tanggal: "Eps 3 — Opsi Narasumber", kegiatan: "Tim P2MW ANYAMI Circular Craft Hilirisasi Lidi Kelapa" },
+      { tanggal: "Eps 4 — Opsi Narasumber", kegiatan: "Tim Kurawal, Juara 3 Proxocoris International Competition 2026" },
       { tanggal: "Eps 5 — Opsi Narasumber", kegiatan: "Tim Ruang Setara, Juara 1 TechSprint Innovation Cup 2026" },
       { tanggal: "Eps 6 — Opsi Narasumber", kegiatan: "Alif Satria Bahari, Juara 1 Air Pistol Men Kejurnas Jawa Barat 2026" }
     ],
@@ -144,9 +144,9 @@ const PROKER_DATA = [
     catatan: "Episode 2–6 masih berstatus opsi narasumber — jadwal tayang menyusul setelah dikonfirmasi ke masing-masing narasumber."
   },
   {
-    nama: "Makrab IF",
+    nama: "Makrab INFUSE 2026",
     status: "terlaksana",
-    ringkasan: "Malam Keakraban Informatika — kegiatan kebersamaan lintas angkatan, dijadwalkan 10–11 Oktober 2026 di Gedung Putih Baturraden, persiapan sedang berjalan.",
+    ringkasan: "Malam Keakraban Informatika, kegiatan kebersamaan lintas angkatan, dijadwalkan 10–11 Oktober 2026 di Gedung Putih Baturraden, persiapan sedang berjalan.",
     deskripsi: "Makrab IF merupakan kegiatan kebersamaan mahasiswa Informatika yang bertujuan mempererat hubungan antar mahasiswa lintas angkatan. Kegiatan dikemas dalam suasana santai melalui berbagai aktivitas seperti permainan kelompok, sharing session, pentas seni, api unggun, refleksi, dan kegiatan kebersamaan lainnya. Melalui kegiatan ini diharapkan tercipta rasa kekeluargaan, solidaritas, serta kekompakan dalam keluarga besar Informatika.",
     tujuan: [
       "Mempererat hubungan antar mahasiswa Informatika.",
@@ -165,56 +165,90 @@ const PROKER_DATA = [
         "Meningkatnya solidaritas dan kekompakan mahasiswa Informatika."
       ],
       kuantitatif: [
-        "Target peserta sebanyak 100 mahasiswa.",
+        "Target peserta sebanyak 150 mahasiswa.",
         "Seluruh rangkaian kegiatan terlaksana sesuai dengan rundown yang telah disusun."
       ]
     },
     timeline: [
       { tanggal: "27 Juli 2026", kegiatan: "Pembentukan 48 panitia pelaksana" },
       { tanggal: "31 Juli 2026", kegiatan: "Penetapan lokasi di Gedung Putih, Baturraden" },
-      { tanggal: "10–11 Oktober 2026", kegiatan: "Pelaksanaan Makrab IF" }
+      { tanggal: "13-20 September 2026", kegiatan: "Open Pendaftaran Makrab INFUSE 2026" },
+      { tanggal: "25 September 2026", kegiatan: "Technical Meeting Makrab INFUSE 2026" },
+      { tanggal: "10–11 Oktober 2026", kegiatan: "Pelaksanaan Makrab INFUSE 2026 di Gedung Putih, Baturraden" }
     ],
     hasil: [
       "48 panitia pelaksana telah terbentuk",
-      "Lokasi kegiatan (Gedung Putih, Baturraden) telah ditetapkan",
+      "Lokasi kegiatan (Gedung Putih, Baturraden)",
       "Tanggal pelaksanaan telah ditetapkan: 10–11 Oktober 2026"
     ],
-    catatan: "Pendaftaran peserta dan rundown lengkap akan diumumkan menyusul — pantau Kontak / media sosial HMPS untuk info terbaru."
   },
+  
   {
-    nama: "HMPS IF Sport",
-    status: "terlaksana",
-    ringkasan: "Funmatch Minisoccer antar mahasiswa Informatika, diikuti 28 peserta dengan sistem round robin, terlaksana 21 Juni 2026 dengan baik dan lancar.",
-    deskripsi: "HMPS IF Sport merupakan program kerja Divisi Minat & Bakat yang menjadi wadah bagi mahasiswa Informatika untuk berolahraga sekaligus mempererat hubungan antar angkatan melalui kegiatan yang bersifat rekreatif dan sportif. Pada periode 2026, kegiatan yang telah berhasil dilaksanakan adalah Funmatch Minisoccer yang diikuti oleh 28 mahasiswa Informatika dengan menggunakan sistem round robin, sehingga setiap tim memperoleh kesempatan bertanding secara merata. Ke depannya, HMPS IF Sport dapat dikembangkan dengan berbagai cabang olahraga lainnya sesuai minat mahasiswa, seperti futsal, badminton, voli, basket, maupun cabang olahraga lainnya.",
+    nama: "IF Sport",
+    status: "berkelanjutan",
+
+    ringkasan: "Program kerja olahraga mahasiswa Informatika yang berkelanjutan melalui berbagai cabang olahraga. Kegiatan pertama berupa Funmatch Minisoccer telah terlaksana pada 21 Juni 2026 dengan 28 peserta. Selanjutnya, akan dilaksanakan cabang olahraga E-Sport yang direncanakan pada Desember 2026.",
+
+    deskripsi: "HMPS IF Sport merupakan program kerja Divisi Minat & Bakat yang menjadi wadah bagi mahasiswa Informatika untuk mengembangkan minat dan bakat di bidang olahraga sekaligus mempererat hubungan antarangkatan. Program ini dilaksanakan secara berkelanjutan melalui berbagai kegiatan cabang olahraga, baik olahraga fisik maupun olahraga elektronik (E-Sport). Pada periode 2026, kegiatan pertama yang telah terlaksana adalah Funmatch Minisoccer pada 21 Juni 2026 dengan 28 peserta menggunakan sistem round robin. Sebagai pengembangan program, HMPS IF Sport selanjutnya akan menyelenggarakan kegiatan E-Sport yang direncanakan pada Desember 2026. Ke depannya, program ini dapat terus dikembangkan melalui berbagai cabang olahraga lainnya sesuai dengan minat dan antusiasme mahasiswa Informatika.",
+
     tujuan: [
-      "Meningkatkan solidaritas antar mahasiswa Informatika.",
-      "Menumbuhkan jiwa sportivitas.",
-      "Mendorong gaya hidup sehat melalui olahraga.",
-      "Menjadi wadah pengembangan minat mahasiswa di bidang olahraga."
+      "Meningkatkan solidaritas dan kebersamaan antar mahasiswa Informatika.",
+      "Menumbuhkan jiwa sportivitas dan kompetisi yang sehat.",
+      "Mendorong gaya hidup sehat melalui kegiatan olahraga.",
+      "Menjadi wadah pengembangan minat dan bakat mahasiswa di bidang olahraga.",
+      "Memberikan kesempatan kepada mahasiswa untuk berpartisipasi dalam berbagai cabang olahraga, termasuk E-Sport."
     ],
+
     sasaran: "Seluruh mahasiswa Program Studi Informatika Universitas Amikom Purwokerto.",
+
     lingkup: "Internal",
-    waktuLokasi: "21 Juni 2026 · Gerai Land Mini Soccer Purwokerto",
+
+    waktuLokasi: "21 Juni 2026 – Desember 2026 · Universitas Amikom Purwokerto",
+
     pesertaPJ: "Irza Nur Tauhid",
+
     parameterKeberhasilan: {
       kualitatif: [
-        "Terjalinnya kebersamaan antar mahasiswa melalui kegiatan olahraga.",
+        "Terjalinnya kebersamaan antar mahasiswa melalui berbagai kegiatan olahraga.",
         "Meningkatnya partisipasi mahasiswa dalam kegiatan non-akademik.",
-        "Terciptanya suasana kompetisi yang sehat, sportif, dan menyenangkan."
+        "Terciptanya suasana kompetisi yang sehat, sportif, dan menyenangkan.",
+        "Tersedianya wadah bagi mahasiswa untuk mengembangkan minat dan bakat di bidang olahraga fisik maupun E-Sport."
       ],
+
       kuantitatif: [
-        "Funmatch Minisoccer diikuti oleh 28 peserta.",
-        "Seluruh pertandingan dengan sistem round robin berjalan dengan baik hingga selesai."
+        "Funmatch Minisoccer berhasil terlaksana dengan 28 peserta.",
+        "Seluruh pertandingan Minisoccer dengan sistem round robin berjalan dengan baik hingga selesai.",
+        "Terlaksananya kegiatan E-Sport pada Desember 2026.",
+        "Adanya peningkatan partisipasi mahasiswa dalam kegiatan IF Sport berikutnya."
       ]
     },
+
     timeline: [
-      { tanggal: "10 Juni 2026", kegiatan: "Pendaftaran peserta Funmatch Minisoccer" },
-      { tanggal: "21 Juni 2026", kegiatan: "Kegiatan selesai — berjalan dengan baik dan lancar" }
+      {
+        tanggal: "10 Juni 2026",
+        kegiatan: "Pembukaan pendaftaran peserta Funmatch Minisoccer."
+      },
+      {
+        tanggal: "21 Juni 2026",
+        kegiatan: "Pelaksanaan Funmatch Minisoccer dengan 28 peserta menggunakan sistem round robin."
+      },
+      {
+        tanggal: "November 2026",
+        kegiatan: "Persiapan dan perencanaan kegiatan cabang olahraga E-Sport."
+      },
+      {
+        tanggal: "Desember 2026 (Rencana)",
+        kegiatan: "Pelaksanaan kegiatan E-Sport sebagai pengembangan cabang olahraga IF Sport."
+      }
     ],
+
     hasil: [
-      "Funmatch Minisoccer terlaksana dengan 28 peserta",
-      "Pertandingan sistem round robin berjalan baik dan lancar hingga selesai"
+      "Funmatch Minisoccer telah terlaksana dengan 28 peserta.",
+      "Pertandingan dengan sistem round robin berjalan dengan baik dan lancar hingga selesai.",
+      "IF Sport dikembangkan dengan penambahan cabang olahraga E-Sport.",
+      "Kegiatan E-Sport direncanakan sebagai agenda lanjutan pada Desember 2026."
     ],
-    catatan: "Cabang olahraga berikutnya bisa berbeda tiap periode, menyesuaikan minat mahasiswa."
+
+    catatan: "IF Sport merupakan program kerja berkelanjutan. Cabang olahraga dapat dikembangkan pada setiap periode sesuai dengan minat mahasiswa. Kegiatan E-Sport menjadi agenda lanjutan yang direncanakan berlangsung pada Desember 2026. Informasi teknis pelaksanaan akan diperbarui setelah ditetapkan."
   }
 ];

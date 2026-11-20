@@ -14,6 +14,13 @@
 <link rel="stylesheet" href="css/style.css">
 <style>
   .logo-mark i{ font-size:1rem; line-height:1; }
+
+  /* Galeri: rasio 3:2 mengikuti ukuran bingkai PNG, bukan kotak persegi. */
+  .gallery-frame {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 </style>
 </head>
 
@@ -84,32 +91,62 @@
 
          CATATAN PERFORMA: semua foto di halaman ini pakai loading="lazy" + decoding="async"
          supaya browser tidak mengunduh keenam foto sekaligus di awal — tiap foto baru diunduh
-         saat mendekati area layar. Kotak foto tetap punya rasio ukuran tetap (aspect-square)
+         saat mendekati area layar. Kotak foto menggunakan rasio horizontal 3:2 agar bingkai tidak terpotong
          lewat CSS jadi tata letak tidak "loncat" selama foto belum selesai dimuat. -->
     <div class="mt-6 sm:mt-10 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4 fade-up">
-      <div class="relative aspect-square rounded-xl overflow-hidden">
+      <div class="relative aspect-[3/2] w-full rounded-xl overflow-hidden bg-[#080511]">
         <div class="placeholder-photo absolute inset-0"></div>
         <img src="assets/galeri/if-database.jpg" alt="Dokumentasi kegiatan IF Database" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <img src="assets/images/frame-minat-bakat.png"
+             alt="Bingkai Minat dan Bakat"
+             class="absolute inset-0 z-10 w-full h-full object-contain pointer-events-none"
+             loading="lazy" decoding="async"
+             onerror="this.style.display='none'">
       </div>
-      <div class="relative aspect-square rounded-xl overflow-hidden">
+      <div class="relative aspect-[3/2] w-full rounded-xl overflow-hidden bg-[#080511]">
         <div class="placeholder-photo absolute inset-0"></div>
         <img src="assets/galeri/sketsa-1.jpg" alt="Dokumentasi kegiatan SKETSA" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <img src="assets/images/frame-minat-bakat.png"
+             alt="Bingkai Minat dan Bakat"
+             class="absolute inset-0 z-10 w-full h-full object-contain pointer-events-none"
+             loading="lazy" decoding="async"
+             onerror="this.style.display='none'">
       </div>
-      <div class="relative aspect-square rounded-xl overflow-hidden">
+      <div class="relative aspect-[3/2] w-full rounded-xl overflow-hidden bg-[#080511]">
         <div class="placeholder-photo absolute inset-0"></div>
-        <img src="assets/galeri/sketsa-2.jpg" alt="Dokumentasi kegiatan SKETSA" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <img src="assets/galeri/if-sport-2.jpg" alt="Dokumentasi kegiatan SKETSA" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <img src="assets/images/frame-minat-bakat.png"
+             alt="Bingkai Minat dan Bakat"
+             class="absolute inset-0 z-10 w-full h-full object-contain pointer-events-none"
+             loading="lazy" decoding="async"
+             onerror="this.style.display='none'">
       </div>
-      <div class="relative aspect-square rounded-xl overflow-hidden">
+      <div class="relative aspect-[3/2] w-full rounded-xl overflow-hidden bg-[#080511]">
         <div class="placeholder-photo absolute inset-0"></div>
         <img src="assets/galeri/if-sport-1.jpg" alt="Dokumentasi kegiatan IF Sport" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <img src="assets/images/frame-minat-bakat.png"
+             alt="Bingkai Minat dan Bakat"
+             class="absolute inset-0 z-10 w-full h-full object-contain pointer-events-none"
+             loading="lazy" decoding="async"
+             onerror="this.style.display='none'">
       </div>
-      <div class="relative aspect-square rounded-xl overflow-hidden">
+      <div class="relative aspect-[3/2] w-full rounded-xl overflow-hidden bg-[#080511]">
         <div class="placeholder-photo absolute inset-0"></div>
-        <img src="assets/galeri/if-sport-2.jpg" alt="Dokumentasi kegiatan IF Sport" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <img src="assets/galeri/makrabb-2026.jpg" alt="Dokumentasi kegiatan IF Sport" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <img src="assets/images/frame-minat-bakat.png"
+             alt="Bingkai Minat dan Bakat"
+             class="absolute inset-0 z-10 w-full h-full object-contain pointer-events-none"
+             loading="lazy" decoding="async"
+             onerror="this.style.display='none'">
       </div>
-      <div class="relative aspect-square rounded-xl overflow-hidden">
+      <div class="relative aspect-[3/2] w-full rounded-xl overflow-hidden bg-[#080511]">
         <div class="placeholder-photo absolute inset-0"></div>
         <img src="assets/galeri/makrab-2026.jpg" alt="Dokumentasi kegiatan Makrab 2026" class="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" onerror="this.style.display='none'">
+        <img src="assets/images/frame-minat-bakat.png"
+             alt="Bingkai Minat dan Bakat"
+             class="absolute inset-0 z-10 w-full h-full object-contain pointer-events-none"
+             loading="lazy" decoding="async"
+             onerror="this.style.display='none'">
       </div>
     </div>
   </div>
